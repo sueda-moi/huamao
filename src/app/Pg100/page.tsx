@@ -29,15 +29,6 @@ export default function TopPage() {
     subtitle: getMessage('Pg100', 'vision_sub')
   };
 
-  const servicesData = {
-    sectionTitle: getMessage('Pg100', 'services_title'),
-    buttonText: getMessage('common', 'common_read_more'), 
-    services: [
-      { title: getMessage('Pg100', 'services_1_title'), description: getMessage('Pg100', 'services_1_desc'), image: '/images/top/service-1.jpg', link: '/Pg201' },
-      { title: getMessage('Pg100', 'services_2_title'), description: getMessage('Pg100', 'services_2_desc'), image: '/images/top/service-2.jpg', link: '/Pg202' },
-      { title: getMessage('Pg100', 'services_3_title'), description: getMessage('Pg100', 'services_3_desc'), image: '/images/top/service-3.jpg', link: '/Pg203' }
-    ]
-  };
 
  const newsData = {
     sectionTitle: getMessage('Pg100', 'news_title'),
@@ -79,7 +70,6 @@ export default function TopPage() {
       <HeroSection {...heroData} />
       <FeatureSection {...featureData} />
       <MvvSection {...mvvData} />
-      <ServiceSection {...servicesData} />
       <NewsSection {...newsData} />
       <AboutUsSection {...aboutData} />
       <ContactBanner />
