@@ -1,6 +1,5 @@
 'use client';
 import PageHeader from '@/components/common/PageHeader';
-import ContactBanner from '@/components/ContactBanner/ContactBanner';
 import JobListings from '@/components/pg500/JobListings';
 
 import { useMessage } from '@/lib/useMessage';
@@ -29,7 +28,6 @@ export default function Page500() {
       />
       <main>
         <JobListings jobs={jobsForList} />
-        <ContactBanner />
       </main>
     </>
   );

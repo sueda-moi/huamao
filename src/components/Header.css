@@ -1,33 +1,45 @@
-/* === Main Header Styles === */
+/*
+ * ===================================================================
+ * New Theme: Bright Red & Black Business Real Estate Style
+ * ===================================================================
+ * - Primary Red (Accent): #E53935
+ * - Dark Color (Text): #222222
+ * - White Color (Background): #FFFFFF
+ * - Light Gray (Borders/Sub-menus): #F4F4F4
+ * ===================================================================
+ */
+
+/* === 1. Color Variables & Global Setup === */
+:root {
+  --primary-red: #E53935;
+  --dark-color: #222222;
+  --text-color: #333333;
+  --secondary-text-color: #777777;
+  --white-color: #FFFFFF;
+  --light-background: #F9F9F9;
+  --border-color: #E0E0E0;
+}
+
+/* === 2. Main Header Styles === */
 .custom-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 80px;
-  /* Increased height for more space */
-  background-color: rgba(3, 127, 199, 0.139);
-  border-bottom: 1px solid  rgba(3, 127, 199, 0.139);
-  /* Light gray border */
-  box-shadow: 0 1px 3px  rgba(3, 127, 199, 0.139);
+  background-color: var(--white-color); /* Bright white background */
+  border-bottom: 1px solid var(--border-color); /* Subtle bottom border */
   z-index: 1000;
-  /* Ensure it's on the top layer */
-  transition: box-shadow 0.3s ease-in-out;
-  
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease;
 }
 
 .custom-header.scrolled {
-  /* A more prominent shadow on scroll */
-  box-shadow: 0 4px 6px -1px rgba(3, 127, 199, 0.139), 0 2px 4px -2px  rgba(3, 127, 199, 0.139);
-  background-image: url('/images/head-background.jpg');
-  background-color: rgba(33, 147, 176, 0.4);
-  background-position:center top;
-  background-size:cover;
+  /* Add a more defined shadow on scroll, keeping the background white */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .custom-header-inner {
   max-width: 1280px;
-  /* Max width of the website content */
   margin: 0 auto;
   height: 100%;
   display: flex;
@@ -36,255 +48,209 @@
   padding: 0 2rem;
 }
 
-/* === Left: Logo === */
 .logo-group {
   display: flex;
   align-items: center;
 }
 
-/* === Right: Navigation Container (Desktop) === */
+/* === 3. Desktop Navigation === */
 .header-nav-right {
   display: flex;
   align-items: center;
   gap: 2rem;
-  /* Gap between element groups (nav, lang-switcher, button) */
+  height: 100%;
 }
 
 .nav-menu {
   display: flex;
-  align-items: center;
-  gap: 1.75rem;
-  /* Gap between navigation links */
-}
-
-.nav-item {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #374151;
-  /* Dark Gray */
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.nav-item:hover {
-  color: #1d4ed8;
-  /* Blue (Brand Color) */
-}
-
-.nav-item.active {
-  color: #1d4ed8;
-  /* Blue (Brand Color) */
-  font-weight: 600;
-}
-
-/* === Contact Button (Shared by Desktop & Mobile) === */
-.nav-contact-button {
-  display: inline-block;
-  background-color: #2563eb;
-  color: white;
-  padding: 0.6rem 1.5rem;
-  border-radius: 6px;
-  font-weight: 500;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background-color 0.2s ease;
-}
-
-.nav-contact-button:hover {
-  background-color: #1d4ed8;
-}
-
-/* === Mobile Menu Toggle Button === */
-.menu-toggle {
-  background: none;
-  border: none;
-  color: #1f2937;
-  /* Dark icon color */
-  cursor: pointer;
-  padding: 0.5rem;
-  /* Increase clickable area */
-}
-
-/* === Mobile Fullscreen Menu === */
-.mobile-menu-overlay {
-  position: fixed;
-  top: 80px;
-  /* Starts below the Header */
-  left: 0;
-  width: 100%;
-  height: calc(100vh - 80px);
-  background-color: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(4px);
-  z-index: 999;
-  display: flex;
-  justify-content: center;
-  padding-top: 4rem;
-}
-
-.mobile-menu-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-}
-
-.mobile-nav-menu {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 2rem;
-}
-
-.mobile-nav-menu .nav-item {
-  font-size: 1.5rem;
-  /* Larger font size for mobile */
-}
-
-.mobile-language-switcher {
-  margin-top: 2rem;
-}
-
-/* === ADD THESE NEW STYLES FOR DROPDOWN MENU === */
-
-/* Modify nav-menu to be a list container */
-.nav-menu {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  /* Adjust gap as needed */
   list-style: none;
   padding: 0;
   margin: 0;
   height: 100%;
 }
 
-/* New container for each nav item to handle positioning */
 .nav-item-container {
   position: relative;
-  /* This is crucial for positioning the dropdown */
   height: 100%;
   display: flex;
   align-items: center;
 }
 
-/* The dropdown menu itself */
-.dropdown-menu {
+.nav-item {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--dark-color); /* Professional black text */
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Underline effect for hover */
+.nav-item::after {
+  content: '';
   position: absolute;
-  top: 85%;
-  /* Position it below the nav item */
+  width: 0;
+  height: 2px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  background-color: white;
+  background-color: var(--primary-red);
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover,
+.nav-item-noclick:hover {
+  color: var(--primary-red); /* Red on hover */
+}
+
+.nav-item:hover::after,
+.nav-item-noclick:hover::after {
+  width: 100%;
+}
+
+/* Active state for navigation items */
+.nav-item.active,
+.nav-item-noclick.active {
+  color: var(--primary-red); /* Red for active page */
+  font-weight: 700;
+}
+
+.nav-item.active::after,
+.nav-item-noclick.active::after {
+  width: 100%; /* Show underline for active item */
+}
+
+.nav-item-noclick {
+  cursor: default;
+}
+
+/* === 4. Desktop Dropdown Menu === */
+.dropdown-menu {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  background-color: var(--white-color);
   min-width: 220px;
   list-style: none;
   padding: 0.75rem 0;
   margin: 0;
   border-radius: 8px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  border: 1px solid #f3f4f6;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
   z-index: 1001;
-
-  /* Default hidden state for animation */
   opacity: 0;
   visibility: hidden;
-  transform: translateX(-50%) translateY(10px);
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  transform: translate(-50%, 10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
-/* The open state for the dropdown */
 .dropdown-menu.open {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(0);
-}
-
-.dropdown-item {
-  /* No specific styles needed for the li */
+  transform: translate(-50%, 0);
 }
 
 .dropdown-link {
   display: block;
   padding: 0.75rem 1.5rem;
   text-decoration: none;
-  color: #374151;
+  color: var(--dark-color);
   font-size: 0.95rem;
   white-space: nowrap;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .dropdown-link:hover {
-  background-color: #f3f4f6;
-  color: #1d4ed8;
+  background-color: var(--light-background);
+  color: var(--primary-red);
 }
 
-.nav-item-noclick {
-  cursor: default;
-  /* Show the default arrow cursor, not the pointer hand */
+.dropdown-link.active {
+  color: var(--primary-red);
+  font-weight: 700;
+  background-color: var(--light-background);
 }
 
 
+/* === 5. Mobile Menu & Toggle === */
+.menu-toggle {
+  background: none;
+  border: none;
+  color: var(--dark-color); /* Black icon */
+  cursor: pointer;
+  padding: 0.5rem;
+}
 
-/* === ADD THESE NEW STYLES FOR MOBILE ACCORDION MENU === */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 80px; /* Start below the Header */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-color: var(--white-color); /* Solid white, bright background */
+  z-index: 999;
+  display: flex;
+  flex-direction: column; /* Changed for better alignment */
+  overflow-y: auto; /* Allow scrolling if content is long */
+}
 
-/* Overwrite previous mobile nav menu styles */
-.mobile-nav-menu {
+.mobile-menu-content {
   width: 100%;
   padding: 2rem 0;
+}
+
+.mobile-nav-menu {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Style for a normal link item */
+/* === 6. Mobile Accordion Menu === */
 .mobile-menu-link {
   display: block;
   width: 100%;
-  padding: 1rem 2rem;
-  font-size: 1.25rem;
+  padding: 1.25rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
   text-align: center;
   text-decoration: none;
-  color: #1f2937;
-  border-bottom: 1px solid #e5e7eb;
+  color: var(--dark-color);
+  border-bottom: 1px solid var(--border-color);
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-.mobile-menu-link.contact {
-  color: #1d4ed8;
-  font-weight: bold;
-}
-
-/* Container for an accordion group (e.g., 事業内容 and its children) */
 .mobile-menu-group {
   width: 100%;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--border-color);
 }
 
-/* The clickable button to toggle the accordion */
 .accordion-toggle {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  font-size: 1.25rem;
-  color: #1f2937;
+  padding: 1.25rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--dark-color);
   background: none;
   border: none;
   cursor: pointer;
+  transition: color 0.2s ease;
 }
 
-/* The container for the sub-menu */
 .submenu-list {
-  background-color: #f9fafb;
-  /* Slightly different background for sub-items */
+  background-color: var(--light-background); /* Light gray for submenu */
   overflow: hidden;
-  /* Animation using max-height */
   max-height: 0;
   transition: max-height 0.4s ease-in-out;
 }
 
-/* The state when the accordion is expanded */
 .submenu-list.expanded {
-  /* Set a max-height large enough to fit all content */
   max-height: 500px;
 }
 
@@ -292,53 +258,53 @@
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.submenu-item {
-  /* no specific style needed for li */
+  border-top: 1px solid var(--border-color);
 }
 
 .submenu-link {
   display: block;
-  padding: 0.8rem 2rem 0.8rem 3rem;
-  /* Indent sub-items */
+  padding: 1rem 2rem 1rem 3rem; /* Indent sub-items */
   font-size: 1rem;
-  color: #4b5563;
+  color: var(--text-color);
   text-decoration: none;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--border-color);
+  transition: color 0.2s ease;
+}
+/* Remove border for the first item in the list */
+.submenu-list ul li:first-child .submenu-link {
+  border-top: none;
+}
+
+/* === 7. Active & Hover States for Mobile === */
+.mobile-menu-link:hover,
+.accordion-toggle:hover {
+    color: var(--primary-red);
+    background-color: var(--light-background);
 }
 
 .submenu-link:hover {
-  background-color: #f0f4f8;
+    color: var(--primary-red);
 }
 
-.nav-item.active {
-  color: #1d4ed8 !important; 
-  font-weight: 600;
-}
-.dropdown-link.active {
-  color: #1d4ed8 !important;
-  font-weight: 600;
-}
-.mobile-menu-link.active { 
-  color: #1d4ed8 !important;
-  font-weight: bold; 
+.mobile-menu-link.active {
+  color: var(--primary-red);
+  font-weight: 700;
 }
 
-/* === Mobile Accordion Active Styles === */
-
-/* 1. 手机端“父级菜单”标题高亮样式 (例如 '事业内容') */
-/* This targets the <span> inside the accordion button. */
 .accordion-toggle span.active {
-  color: #1d4ed8;
-  font-weight: 600;
+  color: var(--primary-red);
+  font-weight: 700;
 }
 
-/* 2. 手机端“子菜单”链接高亮样式 (例如 '服务内容1') */
-/* This targets the <a> link in the dropdown sub-menu. */
 .submenu-link.active {
-  color: #1d4ed8;
-  font-weight: 600;
-  /* Optional: Add a subtle background color to make it stand out even more */
-  background-color: #eef2ff; 
+  color: var(--primary-red);
+  font-weight: 700;
+}
+
+/* === 8. Language Switcher (Mobile) === */
+.mobile-language-switcher {
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
 }

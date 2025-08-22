@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 
 
 import Footer from '@/components/Footer';
-import LoadingScreen from '@/components/LoadingScreen/LoadingScreen';
 import { usePageTransition } from '@/hooks/usePageTransition';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import Header from '@/components/Header';
@@ -16,7 +15,6 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
   const LOADING_DURATION = 400;
   const { loading } = usePageTransition(LOADING_DURATION);
-  const [isFirstLoadFinished, setIsFirstLoadFinished] = useState(false);
   const setLocale = useLocaleStore((state) => state.setLocale);
 
   useEffect(() => {
@@ -57,10 +55,6 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       // Set default language (e.g., Japanese). You can read from localStorage instead if needed.
       setLocale('ja');
 
-      // Delay content appearance for loading animation
-      setTimeout(() => {
-        setIsFirstLoadFinished(true);
-      }, LOADING_DURATION);
     };
 
     if (document.readyState === 'complete') {
@@ -84,14 +78,6 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   unlockScroll();
 }, [pathname]);
 
-  // Show loading screen on first load
-  if (!isFirstLoadFinished) {
-    return <LoadingScreen />;
-  }
-
-
-
-
   return (
     <>
       {/* Header with menu toggle */}
@@ -99,7 +85,6 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
       {/* Animate page transitions */}
       <AnimatePresence mode="wait">
-        {loading && <LoadingScreen key="loader" />}
 
         {!loading && (
           <motion.div

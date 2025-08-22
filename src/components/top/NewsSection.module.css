@@ -1,83 +1,138 @@
+/*
+ * ===================================================================
+ * New Theme: Bright Red & Black Business Real Estate Style (News Section)
+ * ===================================================================
+ * A clean, list-based layout for displaying recent news articles with
+ * clear typography and interactive hover states.
+ * ===================================================================
+ */
+
 .newsSection {
+  background-color: var(--light-background); /* Light gray for section separation */
   padding: 5rem 2rem;
-  background-color: #ffffff;
 }
 
 .container {
-  max-width: 1024px; /* News sections are often narrower */
+  max-width: 1024px;
   margin: 0 auto;
 }
 
 .sectionTitle {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 700;
-  color: #1d4ed8; /* Brand Blue */
+  color: var(--dark-color);
   margin-bottom: 3rem;
-  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+/* Decorative red underline for the title */
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-red);
 }
 
 .newsList {
-  border-top: 1px solid #e5e7eb;
+  margin-bottom: 3rem;
+  border-top: 1px solid var(--border-color); /* Top border for the list */
 }
 
 .newsItem {
   display: flex;
   align-items: center;
   padding: 1.5rem 1rem;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--border-color);
   text-decoration: none;
-  color: inherit;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease;
 }
 
 .newsItem:hover {
-  background-color: #f9fafb; /* Slight hover effect */
+  background-color: var(--white-color); /* Highlight on hover */
 }
 
 .date {
+  color: var(--secondary-text-color);
   font-size: 0.9rem;
-  color: #6b7280;
-  width: 120px;
-  flex-shrink: 0;
+  width: 120px; /* Fixed width for alignment */
+  flex-shrink: 0; /* Prevent date from shrinking */
+  margin: 0;
 }
 
 .category {
+  background-color: var(--dark-color);
+  color: var(--white-color);
   font-size: 0.75rem;
-  font-weight: 500;
-  padding: 0.25rem 0.75rem;
-  border: 1px solid #6b7280;
-  border-radius: 9999px; /* Pill shape */
-  color: #6b7280;
-  margin-right: 2rem;
-  white-space: nowrap;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px; /* Pill shape */
+  margin-right: 1.5rem;
+  white-space: nowrap; /* Prevent category text from wrapping */
 }
 
 .title {
-  font-size: 1rem;
+  color: var(--dark-color);
+  font-size: 1.1rem;
   font-weight: 500;
-  color: #1f2937;
-  flex-grow: 1;
+  flex-grow: 1; /* Title takes up remaining space */
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.newsItem:hover .title {
+  color: var(--primary-red); /* Title turns red on hover */
 }
 
 .buttonContainer {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .viewMoreButton {
   display: inline-block;
-  border: 1px solid #2563eb;
-  color: #2563eb;
-  background-color: transparent;
-  padding: 0.75rem 2.5rem;
-  border-radius: 4px;
+  background-color: var(--primary-red);
+  color: var(--white-color);
+  padding: 0.8rem 2.5rem;
+  border-radius: 5px;
   text-decoration: none;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .viewMoreButton:hover {
-  background-color: #2563eb;
-  color: white;
+  background-color: #B71C1C; /* Darker red on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .newsSection {
+    padding: 4rem 1.5rem;
+  }
+  .newsItem {
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    padding: 1rem 0.5rem;
+  }
+  .date {
+    width: 100px;
+    font-size: 0.85rem;
+  }
+  .category {
+    margin-right: 1rem;
+    padding: 0.25rem 0.7rem;
+    font-size: 0.7rem;
+  }
+  .title {
+    width: 100%; /* Title takes full width on the next line */
+    margin-top: 0.75rem; /* Add space above the title */
+    font-size: 1rem;
+  }
 }

@@ -1,8 +1,27 @@
+/*
+ * ===================================================================
+ * Updated Global Stylesheet with Red & Black Business Theme
+ * ===================================================================
+ */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* === NEW: Light Mode & Default Theme Variables === */
+/* These are the new variables for your Red & Black Business theme. */
+:root {
+  --primary-red: #E53935;
+  --dark-color: #222222;
+  --text-color: #333333;
+  --secondary-text-color: #777777;
+  --light-background: #F9F9F9;
+  --white-color: #FFFFFF;
+  --border-color: #E0E0E0;
+}
 
+/* === EXISTING: Dark Mode Variables (Preserved) === */
+/* Your original dark mode settings are kept. */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -10,18 +29,14 @@
   }
 }
 
+/* === EXISTING: Global & Layout Styles (Preserved) === */
 html,
 body {
   font-family: 'Noto Sans', 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-html,
-body {
   height: 100%;
   width: 100%;
   margin: 0;
   scroll-behavior: smooth;
- 
 }
 
 .layout-root {
@@ -34,38 +49,17 @@ body {
   flex: 1;
 }
 
-.scroll-lottie-wrapper {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999;
-
-  width: 120px;
-  height: 120px;
-  transition: transform 0.3s ease;
+.main-content {
+  padding-top: 80px; /* 80px is our fixed header height */
 }
 
-.scroll-lottie-wrapper:hover {
-  transform: translateX(-50%) scale(1.1);
-  cursor: pointer;
-}
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% center;
-  }
-
-  100% {
-    background-position: 200% center;
-  }
-}
-
+/* === UPDATED: Back to Top Button Themed === */
 .top-btn {
   position: fixed;
   bottom: 2rem;
   right: 1rem;
-  background-color: #1a73e8;
+  background-color: var(--primary-red); /* THEME UPDATE: Changed from blue to theme red */
   color: white;
   border: none;
   border-radius: 50%;
@@ -82,10 +76,38 @@ body {
 }
 
 .top-btn:hover {
-  background-color: #0c5dc0;
+  background-color: #B71C1C; /* THEME UPDATE: Changed to a darker red */
 }
 
-/* 现有规则保持不变，因为它处理的是浏览器原生宽度 */
+
+/* === EXISTING: All Other Styles (Preserved) === */
+/* All your other utility classes, animations, and responsive styles are kept as they were. */
+
+.scroll-lottie-wrapper {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  width: 120px;
+  height: 120px;
+  transition: transform 0.3s ease;
+}
+
+.scroll-lottie-wrapper:hover {
+  transform: translateX(-50%) scale(1.1);
+  cursor: pointer;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .top-btn {
     right: 1rem;
@@ -95,25 +117,18 @@ body {
   }
 }
 
-/* === 新增：为 iframe 内部的手机模式添加样式 === */
-/* 假设你的移动断点是 768px (与 useScreenSizeStore 保持一致) */
-/* 如果 top-btn 在 600px 之外也需要针对 iframe 进行调整，在这里添加 */
 html.is-mobile-iframe .top-btn {
-  /* 例如，如果 top-btn 在 iframe 手机模式下总是需要小尺寸，不依赖 600px 断点 */
   right: 1rem;
   bottom: 1rem;
   padding: 0.4rem 0.6rem;
   font-size: 1.2rem;
-  /* 确保这个样式在 is-mobile-iframe 存在时生效，覆盖默认 */
 }
-/* 如果你希望当 iframe 处于桌面模式时，样式回到默认，或者有特别的 is-desktop-iframe 样式 */
+
 html.is-desktop-iframe .top-btn {
-  /* 例如，确保它回到 3rem 大小 */
   width: 3rem;
   height: 3rem;
   font-size: 1.25rem;
 }
-
 
 .scroll-down-btn {
   position: fixed;
@@ -141,7 +156,8 @@ html.is-desktop-iframe .top-btn {
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(-50%, 0);
   }
   50% {
@@ -149,14 +165,9 @@ html.is-desktop-iframe .top-btn {
   }
 }
 
-/* === 新增：为 iframe 内部的手机模式添加样式 === */
 html.is-mobile-iframe .scroll-down-btn {
-  bottom: 1.5rem; /* 离底部更近 */
+  bottom: 1.5rem;
   width: 2.5rem;
   height: 2.5rem;
   font-size: 1.2rem;
-}
-
-.main-content {
-  padding-top: 80px; /* 80px is our fixed header height */
 }

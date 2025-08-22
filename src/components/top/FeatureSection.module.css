@@ -1,61 +1,117 @@
+/*
+ * ===================================================================
+ * New Theme: Bright Red & Black Business Real Estate Style
+ * ===================================================================
+ * A clean, professional two-column layout for featuring key information.
+ * ===================================================================
+ */
+
 .featureSection {
-  padding: 6rem 2rem;
-  background-color: #f7f9fc;
+  padding: 5rem 2rem;
+  background-color: var(--white-color); /* Bright white background */
 }
 
 .featureContent {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
-  gap: 5rem;
+  align-items: center; /* Vertically align text and image */
+  gap: 4rem; /* Space between text and image */
 }
 
+/* === Text Column === */
 .featureText {
-  flex: 1;
+  flex: 1; /* Allow text to take available space */
+  max-width: 500px; /* Constrain text width for readability */
 }
 
 .featureTitle {
-  font-family: 'Poppins', sans-serif;
   font-size: 2.25rem;
   font-weight: 700;
-  color: #2193b0;
-  /* Brand Blue */
+  color: var(--dark-color);
   margin-bottom: 1.5rem;
-  line-height: 1.2;
+  position: relative;
+  padding-left: 1.5rem; /* Space for the decorative line */
 }
 
-/* Giving the paragraph its own class for better scoping */
+/* Decorative red line before the title for accent */
+.featureTitle::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 60%;
+  background-color: var(--primary-red);
+  border-radius: 3px;
+}
+
 .featureDescription {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.125rem;
+  font-size: 1.1rem;
+  color: var(--secondary-text-color);
   line-height: 1.8;
-  color: #555;
 }
 
+/* === Image Column === */
 .featureImage {
-  flex: 1;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  flex: 1.2; /* Make the image slightly larger than the text column */
 }
 
 .featureImage img {
-  border-radius: 12px;
+  border-radius: 8px; /* Soften the corners of the image */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Add a subtle shadow */
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
+
+/* === Responsive Design === */
+@media (max-width: 992px) {
   .featureContent {
-    flex-direction: column;
+    flex-direction: column; /* Stack text and image vertically */
     gap: 3rem;
   }
 
-  .featureSection {
-    padding: 4rem 1.5rem;
+  .featureText,
+  .featureImage {
+    max-width: 100%;
+    flex: 1; /* Reset flex values */
+  }
+
+  .featureText {
+    text-align: center; /* Center text on mobile */
   }
 
   .featureTitle {
-    font-size: 1.75rem;
+    padding-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  /* Center the decorative line on mobile */
+  .featureTitle::before {
+    top: auto;
+    bottom: -15px; /* Position it below the title */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+  }
+
+  .featureDescription {
+    padding-top: 15px; /* Add space for the centered line */
+  }
+}
+
+@media (max-width: 768px) {
+  .featureSection {
+    padding: 4rem 1.5rem;
+  }
+  .featureTitle {
+    font-size: 1.8rem;
+  }
+  .featureDescription {
+    font-size: 1rem;
   }
 }

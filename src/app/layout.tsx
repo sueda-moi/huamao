@@ -7,8 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 // サイトのメタ情報（必要に応じて編集してください）
 export const metadata: Metadata = {
-  title: '藍海株式会社',
-  description: '藍海株式会社の公式サイトです。',
+  title: '华茂株式会社',
+  description: '华茂株式会社の公式サイトです。',
   icons: {
     icon: '/favicon.ico',
   },

@@ -10,7 +10,6 @@ type FooterLink = {
   label: string;
 };
 
-// 定义链接组类型
 type LinkGroup = {
   title: string;
   links: FooterLink[];
@@ -21,15 +20,7 @@ const Footer = () => {
   const getMessage = useMessage();
 
   const sitemap: LinkGroup[] = [
-    // {
-    //   title: getMessage('common', 'footer_sitemap_services'),
-    //   basePath: '/Pg200',
-    //   links: [
-    //     { href: '/Pg201', label: getMessage('common', 'nav_services_1') },
-    //     { href: '/Pg202', label: getMessage('common', 'nav_services_2') },
-    //     { href: '/Pg203', label: getMessage('common', 'nav_services_3') },
-    //   ],
-    // },
+
     {
       title: getMessage('common', 'footer_sitemap_about'),
       basePath: '/Pg400',

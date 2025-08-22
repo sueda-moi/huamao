@@ -5,7 +5,6 @@ import CeoMessageSection from '@/components/pg400/CeoMessageSection';
 import CompanyProfileSection from '@/components/pg400/CompanyProfileSection';
 import HistorySection from '@/components/pg400/HistorySection';
 import AccessSection from '@/components/pg400/AccessSection';
-import ContactBanner from '@/components/ContactBanner/ContactBanner';
 import { useMessage } from '@/lib/useMessage';
 
 
@@ -79,7 +78,6 @@ export default function Page400() {
                 <CompanyProfileSection {...profileSectionData} />
                 <HistorySection {...historyData} />
                 <AccessSection {...accessData} />
-                <ContactBanner />
             </main>
         </>
     );

@@ -1,7 +1,7 @@
 {
-   "year_suffix": "年",
+  "year_suffix": "年",
   "month_suffix": "月",
-  "alt_logo": "藍海株式会社 Logo",
+  "alt_logo": "華茂株式会社 Logo",
   "nav_top": "TOP",
   "nav_services": "事業内容",
   "nav_services_1": "国際貿易・流通支援",
@@ -19,6 +19,6 @@
   "footer_sitemap_about": "会社情報",
   "footer_sitemap_articles": "記事一覧",
   "footer_address": "〒100-0005 東京都千代田区丸の内三丁目4番1号 新国際ビル8階",
-  "footer_copyright": "Copyright © 2025 BlueOcean Co., Ltd.",
+  "footer_copyright": "Copyright © 2025 Hanamo Co., Ltd.",
   "common_read_more": "詳しく見る"
 }

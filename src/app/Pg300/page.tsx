@@ -1,7 +1,6 @@
 "use client";
 
 import PageHeader from '@/components/common/PageHeader';
-import ContactBanner from '@/components/ContactBanner/ContactBanner';
 import ArticleList from '@/components/pg300/ArticleList';
 import { useLocaleStore } from '@/store/useLocaleStore'; 
 import { getAllArticles } from '@/lib/data/articles';
@@ -41,7 +40,6 @@ export default function Page300() {
       />
       <main>
         <ArticleList {...articleListData} />
-        <ContactBanner />
       </main>
     </>
   );

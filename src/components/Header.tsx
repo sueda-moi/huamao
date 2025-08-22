@@ -101,13 +101,13 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, toggleMenu }) => {
   const isParentActive = (item: NavLink, currentPathname: string) => {
 
     // Rule 1: Special handling for the 'Services' section (/Pg200)
-    // if (item.path === '/Pg200') {
-    //   const serviceChildPages = ['/Pg201', '/Pg202', '/Pg203'];
-    //   // If the current path is any of the service child pages, return true immediately.
-    //   if (serviceChildPages.includes(currentPathname)) {
-    //     return true;
-    //   }
-    // }
+    if (item.path === '/Pg200') {
+      const serviceChildPages = ['/Pg201', '/Pg202', '/Pg203'];
+      // If the current path is any of the service child pages, return true immediately.
+      if (serviceChildPages.includes(currentPathname)) {
+        return true;
+      }
+    }
 
     // Rule 2: Special handling for 'About Us' (/Pg400), which uses anchor links, so startsWith is better.
     if (item.path === '/Pg400') {
@@ -137,7 +137,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, toggleMenu }) => {
       <header className={`custom-header ${scrolled ? 'scrolled' : ''}`}>
         <div className="custom-header-inner">
           <div className="logo-group">
-            <Image src="/images/logo-removebg-preview.png"
+            <Image src="/images/logo.png"
               alt={getMessage('common', 'alt_logo')}
               width={40}
               height={40} />
