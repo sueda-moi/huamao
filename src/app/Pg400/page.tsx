@@ -1,11 +1,11 @@
 'use client';
-import PageHeader from '@/components/common/PageHeader';
 import InPageLinks from '@/components/pg400/InPageLinks';
 import CeoMessageSection from '@/components/pg400/CeoMessageSection';
 import CompanyProfileSection from '@/components/pg400/CompanyProfileSection';
 import HistorySection from '@/components/pg400/HistorySection';
 import AccessSection from '@/components/pg400/AccessSection';
 import { useMessage } from '@/lib/useMessage';
+import PageHero from '@/components/common/PageHero';
 
 
 export default function Page400() {
@@ -66,12 +66,11 @@ export default function Page400() {
 
     return (
         <>
-            <PageHeader
-                category={getMessage('Pg400', 'header_category')}
+            <PageHero
                 title={getMessage('Pg400', 'header_title')}
                 subtitle={getMessage('Pg400', 'header_subtitle')}
-                imageUrl="/images/pg400/header-image.jpg"
             />
+
             <main style={{ maxWidth: '960px', margin: '0 auto', padding: '0 2rem' }}>
                 <InPageLinks navLinks={companyNavLinks} />
                 <CeoMessageSection {...ceoData} />

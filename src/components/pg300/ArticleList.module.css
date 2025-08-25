@@ -1,202 +1,222 @@
+/*
+ * ===================================================================
+ * Styles for the ArticleList Component
+ * ===================================================================
+ * A comprehensive style for a filterable and searchable article list,
+ * with distinct layouts for news and blog posts.
+ * ===================================================================
+ */
+
+/* === 1. General Layout === */
 .section {
-    padding: 4rem 2rem;
-    background-color: #fff;
+  padding: 5rem 2rem;
+  background-color: var(--white-color);
 }
 
 .container {
-    max-width: 1024px;
-    margin: 0 auto;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
-/* Filter Bar Styles */
+/* === 2. Filter & Search Bar === */
 .filterBar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #e5e7eb;
-    padding-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 3rem;
+  border-bottom: 2px solid var(--border-color);
 }
 
 .tabs {
-    display: flex;
-    gap: 2rem;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .tab {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem 0;
-    font-size: 1rem;
-    color: #6b7280;
-    border-bottom: 3px solid transparent;
+  background: none;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--secondary-text-color);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  color: var(--dark-color);
 }
 
 .tab.active {
-    color: #1d4ed8;
-    border-bottom-color: #1d4ed8;
-    font-weight: 600;
+  color: var(--primary-red);
+  font-weight: 700;
+  border-bottom-color: var(--primary-red);
 }
-
-.searchIcon {
-    font-size: 1.5rem;
-    color: #6b7280;
-}
-
-/* List Container */
-.listContainer {
-    margin-top: 2rem;
-}
-
-/* Shared link wrapper style */
-.articleLink {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-/* Style for "お知らせ" (News) Items */
-.newsItem {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid #e5e7eb;
-    transition: background-color 0.2s;
-}
-
-.newsItem:hover {
-    background-color: #f9fafb;
-}
-
-.date {
-    color: #6b7280;
-}
-
-.newsTitle {
-    font-weight: 500;
-}
-
-.categoryTag {
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 0.25rem 0.75rem;
-    border-radius: 4px;
-    color: white;
-}
-
-.categoryTag.news {
-    background-color: #6b7280;
-}
-
-.categoryTag.blog {
-    background-color: #1d4ed8;
-}
-
-/* Style for "ブログ" (Blog) Cards */
-.blogCard {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid #e5e7eb;
-    transition: background-color 0.2s;
-}
-
-.blogCard:hover {
-    background-color: #f9fafb;
-}
-
-.blogContent {
-    flex: 1;
-}
-
-.blogTitle {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin: 0.5rem 0;
-}
-
-.blogExcerpt {
-    color: #6b7280;
-    font-size: 0.9rem;
-    line-height: 1.7;
-}
-
-.blogImageWrapper img {
-    border-radius: 8px;
-}
-
-/* === ADD THESE NEW STYLES FOR SEARCH FUNCTIONALITY === */
 
 .searchArea {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .searchInput {
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-
-    /* Animation preparation */
-    width: 0;
-    padding-left: 0;
-    padding-right: 0;
-    opacity: 0;
-    transition: all 0.4s ease-in-out;
-    visibility: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  outline: none;
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  margin-right: -2.5rem; /* Overlap the button slightly */
+  padding-right: 3rem;
 }
 
 .searchInput.visible {
-    width: 200px;
-    /* Width when visible */
-    padding-left: 1rem;
-    padding-right: 1rem;
-    opacity: 1;
-    visibility: visible;
+  width: 250px;
+  opacity: 1;
+  visibility: visible;
 }
 
 .searchButton {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: #6b7280;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.25rem;
+  background: none;
+  border: none;
+  color: var(--dark-color);
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  z-index: 2;
+  transition: color 0.3s ease;
 }
 
-/* Category Tag Styles */
+.searchButton:hover {
+  color: var(--primary-red);
+}
+
+/* === 3. Article List Styles === */
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.articleLink {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.articleLink:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* === 4. News Item (List View) === */
+.newsItem {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.date {
+  color: var(--secondary-text-color);
+  font-size: 0.9rem;
+  margin: 0;
+  width: 130px;
+  flex-shrink: 0;
+}
+
+.newsTitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--dark-color);
+  margin: 0;
+}
+
+/* === 5. Blog Card (Card View) === */
+.blogCard {
+  display: flex;
+  gap: 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.blogContent {
+  flex: 1;
+}
+
+.blogTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin: 0.5rem 0 1rem 0;
+}
+
+.blogExcerpt {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--secondary-text-color);
+  margin: 0;
+}
+
+.blogImageWrapper {
+  width: 200px;
+  height: 150px;
+  flex-shrink: 0;
+}
+
+.blogImageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* === 6. Category Tags (Shared Style) === */
 .categoryTag {
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 0.25rem 0.75rem;
-    border-radius: 4px;
-    color: white;
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  color: var(--white-color);
+  text-transform: uppercase;
 }
+/* Color coding for categories */
+.news { background-color: #6c757d; } /* Gray */
+.press_release { background-color: #0d6efd; } /* Blue */
+.business { background-color: var(--dark-color); } /* Black */
+.blog { background-color: var(--primary-red); } /* Red */
 
-.categoryTag.news {
-    background-color: #6b7280;
+
+/* === 7. Responsive Design === */
+@media (max-width: 768px) {
+  .searchInput.visible {
+    width: 180px;
+  }
+  .newsItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .blogCard {
+    flex-direction: column-reverse; /* Image on top */
+  }
+  .blogImageWrapper {
+    width: 100%;
+    height: 180px;
+  }
 }
-
-/* 灰色 - 通知 */
-.categoryTag.press_release {
-    background-color: #059669;
-}
-
-/* 绿色 - 新闻稿 */
-.categoryTag.business {
-    background-color: #9333ea;
-}
-
-/* 紫色 - 业务 */
-.categoryTag.blog {
-    background-color: #1d4ed8;
-}
-
-/* 蓝色 - 博客 */

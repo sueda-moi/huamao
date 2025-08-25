@@ -1,15 +1,15 @@
 "use client";
 
-import PageHeader from '@/components/common/PageHeader';
 import ArticleList from '@/components/pg300/ArticleList';
-import { useLocaleStore } from '@/store/useLocaleStore'; 
+import { useLocaleStore } from '@/store/useLocaleStore';
 import { getAllArticles } from '@/lib/data/articles';
 
 import { useMessage } from '@/lib/useMessage';
+import PageHero from '@/components/common/PageHero';
 
 export default function Page300() {
-    const getMessage = useMessage();
-    const { locale } = useLocaleStore();
+  const getMessage = useMessage();
+  const { locale } = useLocaleStore();
 
   const articles = getAllArticles(locale);
 
@@ -32,11 +32,9 @@ export default function Page300() {
 
   return (
     <>
-      <PageHeader
-        category={getMessage('Pg300', 'header_category')}
+      <PageHero
         title={getMessage('Pg300', 'header_title')}
         subtitle={getMessage('Pg300', 'header_subtitle')}
-        imageUrl="/images/Pg300/header-image.jpg"
       />
       <main>
         <ArticleList {...articleListData} />

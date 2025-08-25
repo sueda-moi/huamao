@@ -37,6 +37,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, toggleMenu }) => {
     //   ],
     // },
     { label: getMessage('common', 'nav_news'), path: '/Pg300' },
+    { label: getMessage('common', 'nav_business'), path: '/Pg700' },
     {
       label: getMessage('common', 'nav_about'),
       path: '/Pg400',
