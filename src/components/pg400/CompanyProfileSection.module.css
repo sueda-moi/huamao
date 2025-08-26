@@ -1,58 +1,95 @@
+/*
+ * ===================================================================
+ * Styles for the CompanyProfileSection Component
+ * ===================================================================
+ * A clean, grid-based layout for displaying company profile data
+ * in a definition list format (dt/dd).
+ * ===================================================================
+ */
+
 .section {
-    padding: 5rem 2rem;
-    border-top: 1px solid #e5e7eb;
+  padding: 5rem 2rem;
+  background-color: var(--white-color);
 }
 
 .title {
-    font-size: 1.5rem;
-    /* 页面内标题可以小一些 */
-    font-weight: 700;
-    margin-bottom: 2rem;
-    text-align: center;
+  max-width: 1024px;
+  margin: 0 auto 2.5rem auto;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+/* Red accent line, consistent with other left-aligned titles */
+.title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 60%;
+  background-color: var(--primary-red);
 }
 
 .profileContainer {
-    max-width: 960px;
-    margin: 0 auto;
-    border-top: 1px solid #e5e7eb;
+  max-width: 1024px;
+  margin: 0 auto;
+  border-top: 2px solid var(--dark-color); /* Stronger top border */
 }
 
-/* Using CSS Grid for the definition list layout */
 .profileList {
-    display: grid;
-    /* First column (label) fits its content, second column (value) takes the rest */
-    grid-template-columns: auto 1fr;
+  display: grid;
+  /* Two-column layout: a fixed-width label and a flexible value */
+  grid-template-columns: 200px 1fr;
+  margin: 0;
 }
 
 .label,
 .value {
-    padding: 1.5rem;
-    border-bottom: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .label {
-    background-color: #f9fafb;
-    /* Light gray background for labels */
-    font-weight: 600;
-    color: #1f2937;
-    border-right: 1px solid #e5e7eb;
+  font-weight: 600;
+  color: var(--dark-color);
+  background-color: var(--light-background);
 }
 
 .value {
-    margin: 0;
-    /* Reset browser default margin on <dd> */
-    line-height: 1.8;
-    color: #374151;
+  margin: 0; /* Reset default dd margin */
+  color: var(--secondary-text-color);
+  line-height: 1.7;
 }
 
-/* Responsive: stack them on mobile */
+/* === Responsive Design === */
 @media (max-width: 768px) {
-    .profileList {
-        grid-template-columns: 1fr;
-        /* A single column */
-    }
+  .section {
+    padding: 4rem 1.5rem;
+  }
+  .profileList {
+    /* Stack the label and value on top of each other */
+    grid-template-columns: 1fr;
+  }
+  .label,
+  .value {
+    padding: 1rem;
+  }
+  .label {
+    border-bottom: none; /* Remove border to connect it to the value */
+    padding-bottom: 0.5rem;
+  }
+  .value {
+     /* Add the border back to the value to separate the full item */
+    border-bottom: 1px solid var(--border-color);
+  }
+}
 
-    .label {
-        border-right: none;
-    }
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
 }

@@ -1,106 +1,153 @@
+/*
+ * ===================================================================
+ * Styles for the JobDetailLayout Component
+ * ===================================================================
+ * A professional and clean layout for a single job posting.
+ * ===================================================================
+ */
+
 .pageContainer {
-    padding: 2rem;
-    background-color: #f9fafb;
+  background-color: var(--light-background);
+  padding: 4rem 2rem;
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 3rem;
-    border-radius: 8px;
-    border: 1px solid #e5e7eb;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--white-color);
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  padding: 3rem;
 }
 
-/* Header */
+/* === Header Section === */
 .header {
-    text-align: center;
-    border-bottom: 1px solid #e5e7eb;
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .jobType {
-    color: #6b7280;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
+  display: inline-block;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
 }
 
 .title {
-    font-size: 2.25rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin: 0 0 0.5rem 0;
 }
 
 .companyName {
-    font-size: 1.125rem;
-    color: #374151;
+  font-size: 1rem;
+  color: var(--secondary-text-color);
+  margin: 0;
 }
 
-/* Summary */
+/* === Summary Section (Salary, Location) === */
 .summary {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 3rem;
-    color: #4b5563;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  color: var(--dark-color);
+  font-weight: 500;
 }
 
-.summary>div {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.summary > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
 }
 
-/* Main Content Sections */
-.section {
-    margin-bottom: 2.5rem;
+/* === Main Content (Description, Responsibilities, etc.) === */
+.mainContent {
+  /*
+    The styles below target the content rendered by your <Section> component.
+    This approach keeps the styling consistent for all sections.
+  */
 }
 
-.sectionTitle {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    border-left: 4px solid #1d4ed8;
-    padding-left: 1rem;
+.mainContent :global(h3) {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--primary-red);
 }
 
-.description {
-    line-height: 1.8;
-    color: #374151;
+.mainContent :global(p),
+.mainContent :global(li) {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--secondary-text-color);
 }
 
-.list {
-    list-style: disc;
-    padding-left: 1.5rem;
-    line-height: 1.8;
-    color: #374151;
+.mainContent :global(ul) {
+  list-style-position: outside;
+  padding-left: 1.5rem;
+  display: grid;
+  gap: 0.75rem;
 }
 
-.list li {
-    margin-bottom: 0.75rem;
+/* Add margin between each Section component */
+.mainContent > :global(section) {
+  margin-bottom: 3rem;
+}
+.mainContent > :global(section:last-child) {
+  margin-bottom: 0;
 }
 
-/* Apply Button */
+
+/* === Apply Button === */
 .applyButtonWrapper {
-    text-align: center;
-    margin-top: 3rem;
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
 }
 
 .applyButton {
-    display: inline-block;
-    background-color: #2563eb;
-    color: white;
-    font-size: 1.125rem;
-    font-weight: 600;
-    border: none;
-    padding: 1rem 3rem;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.2s;
+  display: inline-block;
+  background-color: var(--primary-red);
+  color: var(--white-color);
+  padding: 1rem 3.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
 }
 
 .applyButton:hover {
-    background-color: #1d4ed8;
+  background-color: #B71C1C; /* Darker red */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(229, 57, 53, 0.4);
+}
+
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 3rem 1rem;
+  }
+  .container {
+    padding: 2rem 1.5rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
 }

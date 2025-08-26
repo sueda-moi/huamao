@@ -1,41 +1,112 @@
+/*
+ * ===================================================================
+ * Styles for the CeoMessageSection Component
+ * ===================================================================
+ * An elegant, two-column layout to present the CEO's message,
+ * building trust and a personal connection.
+ * ===================================================================
+ */
+
 .section {
-    padding: 5rem 2rem;
+  padding: 6rem 2rem;
+  background-color: var(--light-background);
 }
 
 .container {
-    max-width: 960px;
-    margin: 0 auto;
-    display: flex;
-    gap: 3rem;
-    align-items: flex-start;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  background-color: var(--white-color);
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* Important for keeping the image within the rounded corners */
 }
 
+/* === Image Column === */
 .imageWrapper {
-    flex-shrink: 0;
+  flex: 0 0 40%; /* Image takes 40% of the width */
+  position: relative;
+  min-height: 450px;
 }
 
 .ceoImage {
-    border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 
+/* === Text Column === */
 .textWrapper {
-    flex-grow: 1;
+  flex: 1; /* Text takes the remaining space */
+  padding: 3rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .title {
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1.6;
-    margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 2rem;
+  line-height: 1.4;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+/* Red accent line consistent with other sections */
+.title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 5px; /* Align with the top of the text */
+  width: 5px;
+  height: 80%;
+  background-color: var(--primary-red);
 }
 
 .paragraph {
-    line-height: 2;
-    margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--secondary-text-color);
+  margin-bottom: 1.5rem;
 }
 
 .signature {
-    text-align: right;
-    font-weight: 600;
-    margin-top: 2rem;
+  margin-top: 2rem;
+  text-align: right;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+
+/* === Responsive Design === */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column; /* Stack image on top of text */
+  }
+  .imageWrapper {
+    width: 100%;
+    height: 350px; /* Give the image a fixed height on mobile */
+    flex-basis: auto;
+  }
+  .textWrapper {
+    padding: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 4rem 1rem;
+  }
+  .textWrapper {
+    padding: 2rem 1.5rem;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+  .paragraph {
+    font-size: 0.95rem;
+  }
 }

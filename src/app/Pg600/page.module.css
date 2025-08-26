@@ -1,20 +1,55 @@
+/*
+ * ===================================================================
+ * Final Styles for the Main Contact Page (Pg600)
+ * ===================================================================
+ * NOTE: All :global() form styles have been removed because the
+ * ContactForm component now has its own dedicated stylesheet.
+ * ===================================================================
+ */
+
 .pageHeader {
-  background-color: #1d4ed8;
-  color: white;
-  padding: 3rem 2rem;
+  background-color: var(--light-background);
+  padding: 4rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .title {
-  max-width: 1280px;
-  margin: 0 auto;
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 1rem;
 }
 
-.contactForm {
-  padding-top: 2rem; 
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 2rem;
+/* Red underline for brand consistency */
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-red);
+}
 
+/* This container simply provides spacing for the form component */
+.contactForm {
+  padding: 4rem 2rem;
+  background-color: var(--white-color);
+}
+
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .pageHeader,
+  .contactForm {
+    padding: 3rem 1.5rem;
+  }
+  .title {
+    font-size: 2.25rem;
+  }
 }
