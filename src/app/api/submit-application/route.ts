@@ -6,7 +6,7 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
   
     // Lambda函数的URL
-    const lambdaUrl = 'https://lkvt2qjbsc3j3pteku4mb7jbou0osfdm.lambda-url.ap-northeast-1.on.aws/';
+    const lambdaUrl = 'https://iroln5vuvovxy7pvdmnk4u4kki0tsbsk.lambda-url.ap-northeast-1.on.aws/';
     
     const response = await fetch(lambdaUrl, {
       method: 'POST',

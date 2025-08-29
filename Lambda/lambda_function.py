@@ -65,7 +65,7 @@ def lambda_handler(event, context):
             }
 
         # Construct the email subject in Japanese.
-        subject_parts = ['【藍海株式会社】お間い合わせがありました']
+        subject_parts = ['【華茂株式会社】お間い合わせがありました']
         # if user_name and user_name != '未入力': # Only add name to subject if provided
         #     subject_parts.append(f'（氏名：{user_name}）')
         # if user_email:
@@ -75,7 +75,7 @@ def lambda_handler(event, context):
         subject = ' '.join(subject_parts)
 
         # Construct the email body (plain text) in Japanese.
-        email_body_text = f"藍海株式会社へのお問い合わせ。\n\n" \
+        email_body_text = f"華茂株式会社へのお問い合わせ。\n\n" \
                           f"氏名: {user_name}\n" \
                           f"会社名: {user_company}\n" \
                           f"メールアドレス: {user_email if user_email else '提供なし'}\n" \
@@ -84,7 +84,7 @@ def lambda_handler(event, context):
         
         # Construct the email body (HTML) in Japanese.
         email_body_html = f"<html><body>" \
-                          f"<p>藍海株式会社へのお問い合わせ</p>" \
+                          f"<p>華茂株式会社へのお問い合わせ</p>" \
                           f"<p><strong>氏名:</strong> {user_name}</p>" \
                           f"<p><strong>会社名:</strong> {user_company}</p>" \
                           f"<p><strong>メールアドレス:</strong> {user_email if user_email else '提供なし'}</p>" \

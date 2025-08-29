@@ -3,11 +3,16 @@ import json
 import boto3
 import uuid
 import os
+from botocore.config import Config 
 
 S3_BUCKET_NAME = os.environ.get('S3_BUCKET_NAME')
 S3_REGION = os.environ.get('S3_REGION', 'ap-northeast-1')
 
-s3_client = boto3.client('s3', region_name=S3_REGION)
+s3_client = boto3.client(
+    's3',
+    region_name=S3_REGION,
+    config=Config(signature_version='s3v4') 
+)
 
 # Define max file size in bytes, e.g., 5MB
 MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024 # 5 MB
