@@ -1,12 +1,12 @@
 {
-  "header_category": "文章一览",
-  "header_title": "ARTICLE",
-  "header_subtitle": "为您带来蓝海株式会社的最新信息、新闻稿及行业洞察。",
-  "tab_all": "所有文章",
-  "tab_news": "通知",
+  "header_category": "文章列表",
+  "header_title": "文章",
+  "header_subtitle": "为您带来华茂株式会社的最新动态、新闻稿及行业洞察。",
+  "tab_all": "全部文章",
+  "tab_news": "通知公告",
   "tab_press_release": "新闻稿",
   "tab_business": "业务相关",
   "tab_blog": "博客",
   "newsArticlePagelink": "返回文章列表",
-  "search_placeholder": "通过关键词搜索..."
+  "search_placeholder": "关键词搜索..."
 }

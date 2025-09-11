@@ -1,31 +1,46 @@
 {
-  "pg002_title": "＜得意分野＞",
-   "pg002_summary_items": [
-    { "type": "title", "text": "金融分野領域" },
-    { "type": "des", "text": "銀行、証券、クレジットカード、政府系金融の業務開発・維持保守" },
-    { "type": "item", "text": "勘定系の預金／為替／インターバンク／債権業務など" },
-    { "type": "item", "text": "情報系／周辺系／データ集配信／ＥＵＣ業務など" },
-
-    { "type": "title", "text": "保険分野領域" },
-    { "type": "des", "text": "生命保険／損害保険／共済系の業務開発・維持保守" },
-    { "type": "item", "text": "保険業務／営業業務／商品開発業務など" },
-
-    { "type": "title", "text": "公共分野領域" },
-    { "type": "des", "text": "自治体向け総合行政情報システムの業務開発・維持保守" },
-    { "type": "item", "text": "自治体向けシステム開発・提供／標準化対応／ＤＸサービス化など" },
-
-    { "type": "title", "text": "通信・組込領域" },
-    { "type": "des", "text": "大規模Ethernet開発／車載系開発など" },
-
-    { "type": "title", "text": "インフラ領域" },
-    { "type": "des", "text": "AWS・Azure基盤構築／オンプレミス基盤構築／ネットワーク構築／運用保守など" },
-
-    { "type": "title", "text": "＜当社の強み＞" },
-    { "type": "des", "text": "金融業界の勘定系／周辺系／保険の業務に精通した数多くのSE人財保有" },
-    { "type": "des", "text": "社会基盤の環境（AWSなど）ネットワーク構築に精通した数多くのSE人財保有" },
-
-    { "type": "title", "text": "お客様の要望により" },
-    { "type": "des", "text": "当社子会社（日本人のＳＥ集団）と連携した要員提案" },
-    { "type": "des", "text": "首都圏、北海道（札幌）名古屋以外の地域での開発・維持" }
-  ]
+  "hero": {
+    "title": "Our Services",
+    "subtitle": "Our Areas of Expertise and the Unique Value We Offer to Our Clients"
+  },
+  "intro": {
+    "paragraph": "Kamo operates in a wide range of fields including e-commerce, medical, and fashion, built upon a foundation of international trade, IT systems, and real estate development.\nBy integrating our deep expertise and network cultivated in each field, we provide optimal one-stop solutions for our clients' challenges."
+  },
+  "services_list": [
+    {
+      "icon": "FaGlobe",
+      "title": "International Trade Business",
+      "description": "Acting as a reliable bridge between Japan and the world, we support the construction of efficient and stable global supply chains."
+    },
+    {
+      "icon": "FaLaptopCode",
+      "title": "IT System Development & Operation",
+      "description": "We build and operate cutting-edge IT solutions that resolve business inefficiencies, powerfully driving corporate digital transformation (DX)."
+    },
+    {
+      "icon": "FaCity",
+      "title": "Real Estate Investment & Management",
+      "description": "With real estate strategies driven by data and IT, we provide comprehensive support from the revitalization of idle assets to operation, maximizing asset value."
+    },
+    {
+      "icon": "FaShoppingCart",
+      "title": "E-commerce Site Planning & Operation",
+      "description": "With our unique e-commerce site strategy, we provide one-stop support from planning to operation, accelerating success in the digital market."
+    },
+    {
+      "icon": "FaHeartbeat",
+      "title": "Medical Product Design",
+      "description": "Through medical product design that balances both functionality and aesthetics, we contribute to improving people's Quality of Life (QOL)."
+    },
+    {
+      "icon": "FaTshirt",
+      "title": "Fashion School Operation",
+      "description": "We operate a fashion design school to cultivate next-generation talent, creating the future of the industry from a global perspective."
+    }
+  ],
+  "cta": {
+    "title": "Take Your Business to the Next Stage",
+    "subtitle": "Our expertise will solve your challenges. Please feel free to contact us for a consultation.",
+    "button": "Contact Us"
+  }
 }
