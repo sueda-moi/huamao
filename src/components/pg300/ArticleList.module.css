@@ -1,9 +1,6 @@
-/*
+/*src\components\pg300\ArticleList.module.css
  * ===================================================================
  * Styles for the ArticleList Component
- * ===================================================================
- * A comprehensive style for a filterable and searchable article list,
- * with distinct layouts for news and blog posts.
  * ===================================================================
  */
 
@@ -18,45 +15,85 @@
   margin: 0 auto;
 }
 
-/* === 2. Filter & Search Bar === */
+/* === 2. Filter & Search Bar (Revised) === */
 .filterBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  flex-wrap: nowrap;
   gap: 1rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem; /* Reduced padding slightly */
   margin-bottom: 3rem;
   border-bottom: 2px solid var(--border-color);
 }
 
+/* --- Scrolling Tab Container (Revised) --- */
 .tabs {
   display: flex;
   gap: 0.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  flex-grow: 1;
+  min-width: 0;
+  
+  /* [NEW] Add padding to the bottom to create space. */
+  padding-bottom: 0.75rem; 
 }
 
+/* [MODIFIED] Re-enabled the scrollbar and styled it to be subtle. */
+.tabs::-webkit-scrollbar {
+  height: 5px; /* Scrollbar height */
+}
+.tabs::-webkit-scrollbar-track {
+  background: transparent; /* Track background */
+}
+.tabs::-webkit-scrollbar-thumb {
+  background-color: #ddd; /* Scrollbar thumb color */
+  border-radius: 10px;
+}
+.tabs::-webkit-scrollbar-thumb:hover {
+  background-color: #bbb; /* Thumb color on hover */
+}
+
+
+/* --- Individual Tab Buttons (Revised for a modern, text-focused look) --- */
 .tab {
+  /* [REMOVED] Removed default background and borders to de-emphasize the "button" look. */
   background: none;
   border: none;
+  
+  border-radius: 6px; /* Keep radius for the hover effect */
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: 500;
   color: var(--secondary-text-color);
   cursor: pointer;
-  border-bottom: 3px solid transparent;
-  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent; /* Keeps the space for the active indicator */
+  transition: all 0.2s ease-in-out;
+  background-color: gainsboro;
 }
 
+/* [MODIFIED] On hover, a background color appears to indicate the clickable area. */
 .tab:hover {
   color: var(--dark-color);
+  background-color: #f0f2f5; /* A light, modern UI gray */
 }
 
+/* [MODIFIED] Active state is now indicated by color and underline only, not a background. */
 .tab.active {
   color: var(--primary-red);
   font-weight: 700;
   border-bottom-color: var(--primary-red);
+  background-color: burlywood; /* Ensure no background on active tab */
 }
 
+/* [MODIFIED] Click feedback is now more subtle. */
+.tab:active {
+  transform: scale(0.98);
+}
+
+
+/* --- Search Area Styles (Unchanged) --- */
 .searchArea {
   display: flex;
   align-items: center;
@@ -72,7 +109,7 @@
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s ease;
-  margin-right: -2.5rem; /* Overlap the button slightly */
+  margin-right: -2.5rem;
   padding-right: 3rem;
 }
 
@@ -99,7 +136,8 @@
   color: var(--primary-red);
 }
 
-/* === 3. Article List Styles === */
+/* === 3. Article List Styles (Unchanged) === */
+/* ... (The rest of your CSS file remains the same) ... */
 .listContainer {
   display: flex;
   flex-direction: column;
@@ -119,7 +157,6 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* === 4. News Item (List View) === */
 .newsItem {
   display: flex;
   align-items: center;
@@ -144,7 +181,6 @@
   margin: 0;
 }
 
-/* === 5. Blog Card (Card View) === */
 .blogCard {
   display: flex;
   gap: 2rem;
@@ -185,7 +221,6 @@
   border-radius: 5px;
 }
 
-/* === 6. Category Tags (Shared Style) === */
 .categoryTag {
   display: inline-block;
   font-size: 0.75rem;
@@ -195,14 +230,11 @@
   color: var(--white-color);
   text-transform: uppercase;
 }
-/* Color coding for categories */
-.news { background-color: #6c757d; } /* Gray */
-.press_release { background-color: #0d6efd; } /* Blue */
-.business { background-color: var(--dark-color); } /* Black */
-.blog { background-color: var(--primary-red); } /* Red */
+.news { background-color: #6c757d; }
+.press_release { background-color: #0d6efd; }
+.business { background-color: var(--dark-color); }
+.blog { background-color: var(--primary-red); }
 
-
-/* === 7. Responsive Design === */
 @media (max-width: 768px) {
   .searchInput.visible {
     width: 180px;
@@ -213,7 +245,7 @@
     gap: 0.75rem;
   }
   .blogCard {
-    flex-direction: column-reverse; /* Image on top */
+    flex-direction: column-reverse;
   }
   .blogImageWrapper {
     width: 100%;
