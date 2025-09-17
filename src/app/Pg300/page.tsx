@@ -3,7 +3,6 @@
 import ArticleList from '@/components/pg300/ArticleList';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getAllArticles } from '@/lib/data/articles';
-
 import { useMessage } from '@/lib/useMessage';
 import PageHero from '@/components/common/PageHero';
 
@@ -20,21 +19,21 @@ export default function Page300() {
 
   const articleListData = {
     filterTabs: [
-      { key: 'all', label: getMessage('Pg300', 'tab_all') },
-      { key: 'news', label: getMessage('Pg300', 'tab_news') },
-      { key: 'press_release', label: getMessage('Pg300', 'tab_press_release') },
-      { key: 'business', label: getMessage('Pg300', 'tab_business') },
-      { key: 'blog', label: getMessage('Pg300', 'tab_blog') },
+      { key: 'all', label: getMessage('Pg300', 'tab_all') || '' },
+      { key: 'news', label: getMessage('Pg300', 'tab_news') || '' },
+      { key: 'press_release', label: getMessage('Pg300', 'tab_press_release') || '' },
+      { key: 'business', label: getMessage('Pg300', 'tab_business') || '' },
+      { key: 'blog', label: getMessage('Pg300', 'tab_blog') || '' },
     ],
     articles: articlesForList,
-    searchPlaceholder: getMessage('Pg300', 'search_placeholder'),
+    searchPlaceholder: getMessage('Pg300', 'search_placeholder') || '',
   };
 
   return (
     <>
       <PageHero
-        title={getMessage('Pg300', 'header_title')}
-        subtitle={getMessage('Pg300', 'header_subtitle')}
+        title={getMessage('Pg300', 'header_title') || ''}
+        subtitle={getMessage('Pg300', 'header_subtitle') || ''}
       />
       <main>
         <ArticleList {...articleListData} />

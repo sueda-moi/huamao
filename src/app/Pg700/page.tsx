@@ -33,11 +33,7 @@ const ServicesPage = () => {
 
   // JSONからサービスリストを取得（データがない場合は空の配列を返す）
   const rawServices = getMessage('Pg700', 'services_list');
-  const servicesData: Service[] = Array.isArray(rawServices)
-    ? rawServices
-    : typeof rawServices === 'string'
-      ? JSON.parse(rawServices)
-      : [];
+  const servicesData: Service[] = Array.isArray(rawServices) ? rawServices : [];
 
   return (
     <main className={styles.servicesPage}>
