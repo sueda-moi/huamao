@@ -1,14 +1,26 @@
 {
-  "pg301_title": "Announcing the Establishment of 'Kamo Inc.', a Next-Generation Global Company",
-  "pg301_category": "News",
-  "pg302_title": "Accelerating Global Expansion with Representative Base in Singapore",
-  "pg302_category": "Press Release",
-  "pg303_title": "New \"Real Estate Profitability Support\" Service Launched, Utilizing IT and Data",
-  "pg303_category": "Business",
-  "pg304_title": "What is the 'Value Creation Strategy' in Real Estate Investment?",
-  "pg304_category": "Blog",
-  "pg304_excerpt": "The 'Value Creation Strategy' creates new value and generates high returns even in highly competitive markets. This article explains the specific concepts and their application to the real estate planning practiced by Kamo Inc.",
-  "pg305_title": "First Time Importing/Exporting: 5 Checkpoints to Avoid Failure",
-  "pg305_category": "Blog",
-  "pg305_excerpt": "Import/export, the first step in global business, is full of pitfalls such as complex procedures and cultural differences. The experts at Kamo explain the five essential checkpoints for success."
+  "category_news": "News",
+  "category_press_release": "Press Release",
+  "category_business": "Business",
+  "category_blog": "Blog",
+
+  "pg301_title": "Announcing the Establishment of Kamo Inc., a Next-Generation Global Company",
+  "pg301_excerpt": "We are pleased to announce the establishment of Kamo Inc. as of today, June 27, 2024…",
+  "pg301_content": "<p>We are pleased to announce the establishment of Kamo Inc. as of today, June 27, 2024.</p><p>The name 'Kamo' embodies our determination to nurture the budding potential of businesses alongside our clients and partners, allowing them to bloom into brilliant success.</p><h3>Our Vision</h3><p>With the philosophy of 'Driving Growth to the Next Generation with the Power of Innovation,' we aim to become a globally competitive company originating from Japan. We will leverage our core businesses in international trade, IT system development, and real estate investment, while fusing expertise from diverse fields such as medical product design, fashion, and e-commerce.</p><p>We invite you to look forward to the future endeavors of Kamo Inc.</p>",
+
+  "pg302_title": "Accelerating Global Expansion with Core Team Based in Singapore",
+  "pg302_excerpt": "Our core team is based in Singapore, the business hub of Asia, to accelerate the company's global expansion…",
+  "pg302_content": "<p>Our Representative Director, Wu Guiming, is based in Singapore, the business hub of Asia. This strategic location allows us to enhance global supply chain support, strengthen our network with overseas investors, and accelerate our company's global expansion.</p>",
+
+  "pg303_title": "New Service Launch: IT & Data-Driven Real Estate Asset Appreciation",
+  "pg303_excerpt": "Starting today, we are launching a new consulting service for real estate owners and investors that utilizes data analysis and IT…",
+  "pg303_content": "<p>Starting today, we are launching a new consulting service for real estate owners and investors that utilizes data analysis and IT. Please see our services page for more details.</p>",
+
+  "pg304_title": "What is the 'Value Creation Strategy' for High Growth in Real Estate Investment?",
+  "pg304_excerpt": "The 'Value Creation Strategy' helps create new value and generate high returns even in highly competitive markets…",
+  "pg304_content": "<h3>Creating Value, Not Just Competing</h3><p>The 'Value Creation Strategy' is a business approach that focuses on building a competitive advantage by generating new added value through innovative ideas, rather than remaining in saturated, price-competitive markets (red oceans).</p><p>This concept is extremely important in real estate investment. While many investors compete for properties based on the same metrics, we use data analysis and IT to discover hidden value and new uses for properties that no one else has noticed. This is the core of the real estate consulting practiced by Kamo Inc.</p>",
+
+  "pg305_title": "First-Time Importing & Exporting: 5 Key Checkpoints to Avoid Pitfalls",
+  "pg305_excerpt": "As the first step in global business, import/export operations are full of potential pitfalls. Kamo's experts explain the keys to success…",
+  "pg305_content": "<p>As the first step in global business, import/export operations are full of potential pitfalls. The experts at Kamo explain the five essential checkpoints for success.</p><ol><li><strong>Correctly Understand Incoterms:</strong> Clearly define the division of costs and risks (e.g., FOB, CIF) before signing a contract.</li><li><strong>Identify Accurate HS Codes:</strong> This is the most crucial code for determining tariff rates. Errors can lead to penalties and fines.</li><li><strong>Ensure Export Control Compliance:</strong> You must always verify if products are subject to export regulations and secure the necessary licenses.</li><li><strong>Select Appropriate Transport and Insurance:</strong> Choose the optimal transportation method (sea or air freight) and insurance based on product characteristics, cost, and lead time.</li><li><strong>Choose Reliable Partners:</strong> Collaboration with trustworthy local customs brokers and logistics providers is key to success.</li></ol><p>At Kamo Inc., our experts provide support for every one of these steps.</p>"
 }

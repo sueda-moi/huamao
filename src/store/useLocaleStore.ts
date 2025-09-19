@@ -2,7 +2,7 @@
 import { create } from 'zustand';
 
 type Locale = 'ja' | 'en' | 'zh';
-type MessageFile = 'articles' | 'common' | 'Pg100' | 'Pg300' | 'Pg400' | 'Pg500' | 'Pg600' | 'Pg700' | 'Pg900';
+type MessageFile = 'articles' | 'common'| 'jobs' | 'Pg100' | 'Pg300' | 'Pg400' | 'Pg500' | 'Pg600' | 'Pg700' | 'Pg900';
 
 type Messages = Record<MessageFile, Record<string, string>>;
 
@@ -17,6 +17,7 @@ export const useLocaleStore = create<LocaleState>((set) => ({
   messages: {
     articles: {},
     common: {},
+    jobs:{},
     Pg100: {},
     Pg300: {},
     Pg400: {},
@@ -30,6 +31,7 @@ export const useLocaleStore = create<LocaleState>((set) => ({
     const loadedMessages: Messages = {
       articles: {},
       common: {},
+      jobs:{},
       Pg100: {},
       Pg300: {},
       Pg400: {},
@@ -39,7 +41,7 @@ export const useLocaleStore = create<LocaleState>((set) => ({
       Pg900: {},
     };
 
-    const messageFiles: MessageFile[] = ['articles', 'common', 'Pg100', 'Pg300', 'Pg400', 'Pg500', 'Pg600', 'Pg700', 'Pg900'];
+    const messageFiles: MessageFile[] = ['articles', 'common',  'jobs','Pg100', 'Pg300', 'Pg400', 'Pg500', 'Pg600', 'Pg700', 'Pg900'];
 
     for (const file of messageFiles) {
       const mod = await import(`../../messages/${newLocale}/${file}.json`);

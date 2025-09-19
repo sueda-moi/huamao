@@ -1,46 +1,40 @@
 {
-  "hero": {
-    "title": "Our Services",
-    "subtitle": "Our Areas of Expertise and the Unique Value We Offer to Our Clients"
-  },
-  "intro": {
-    "paragraph": "Kamo operates in a wide range of fields including e-commerce, medical, and fashion, built upon a foundation of international trade, IT systems, and real estate development.\nBy integrating our deep expertise and network cultivated in each field, we provide optimal one-stop solutions for our clients' challenges."
-  },
+  "hero_title": "Our Services",
+  "hero_subtitle": "Specialized Solutions Designed to Create Unique Value for Your Business",
+  "intro_paragraph": "Kamo builds upon a foundation of international trade, IT solutions, and real estate development, while expanding into diverse sectors including e-commerce, medical products, and fashion.\nBy integrating our deep expertise and network from each field, we deliver end-to-end solutions optimized for our clients' unique challenges.",
   "services_list": [
     {
       "icon": "FaGlobe",
-      "title": "International Trade Business",
-      "description": "Acting as a reliable bridge between Japan and the world, we support the construction of efficient and stable global supply chains."
+      "title": "Global Trade & Supply Chain",
+      "description": "Acting as a trusted bridge between Japan and the world, we help build efficient and resilient global supply chains."
     },
     {
       "icon": "FaLaptopCode",
-      "title": "IT System Development & Operation",
-      "description": "We build and operate cutting-edge IT solutions that resolve business inefficiencies, powerfully driving corporate digital transformation (DX)."
+      "title": "Enterprise IT Solutions",
+      "description": "We build and operate advanced IT solutions to eliminate business inefficiencies and powerfully drive your company's digital transformation (DX)."
     },
     {
       "icon": "FaCity",
       "title": "Real Estate Investment & Management",
-      "description": "With real estate strategies driven by data and IT, we provide comprehensive support from the revitalization of idle assets to operation, maximizing asset value."
+      "description": "With data-driven real estate strategies, we provide comprehensive support from revitalizing idle properties to ongoing operations, unlocking the full potential of your assets."
     },
     {
       "icon": "FaShoppingCart",
-      "title": "E-commerce Site Planning & Operation",
-      "description": "With our unique e-commerce site strategy, we provide one-stop support from planning to operation, accelerating success in the digital market."
+      "title": "E-commerce Strategy & Operations",
+      "description": "We provide end-to-end support, from strategic planning to daily operations, to accelerate your success in the digital marketplace."
     },
     {
       "icon": "FaHeartbeat",
       "title": "Medical Product Design",
-      "description": "Through medical product design that balances both functionality and aesthetics, we contribute to improving people's Quality of Life (QOL)."
+      "description": "Through medical product designs that balance functionality with aesthetics, we are dedicated to enhancing people's Quality of Life (QOL)."
     },
     {
       "icon": "FaTshirt",
-      "title": "Fashion School Operation",
-      "description": "We operate a fashion design school to cultivate next-generation talent, creating the future of the industry from a global perspective."
+      "title": "Fashion School Management",
+      "description": "We operate a fashion design school to nurture the next generation of talent, shaping the future of the industry from a global perspective."
     }
   ],
-  "cta": {
-    "title": "Take Your Business to the Next Stage",
-    "subtitle": "Our expertise will solve your challenges. Please feel free to contact us for a consultation.",
-    "button": "Contact Us"
-  }
+  "cta_title": "Take Your Business to the Next Level",
+  "cta_subtitle": "Our expertise can solve your challenges. Contact us for a consultation to discuss your needs.",
+  "cta_button": "Contact Us"
 }

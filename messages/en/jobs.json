@@ -1,0 +1,27 @@
+{
+  "it-engineer_title": "[Experienced Hire] IT Engineer: SE/PG/PL/PM Candidate",
+  "it-engineer_tags": [
+    "Full-time",
+    "Head Office (Shinjuku-ku, Tokyo)"
+  ],
+  "it-engineer_summary_location": "Waseda Tsurumaki-cho, Shinjuku-ku, Tokyo",
+  "it-engineer_summary_salary": "Monthly Salary: ¥350,000 - ¥700,000 (DOE)",
+  "it-engineer_summary_type": "Full-time Employee",
+  "it-engineer_description": "We are looking for an engineer to be at the core of Kamo Inc.'s diverse businesses. You will be responsible for a wide range of tasks, from upstream processes to maintenance and operation, for our rapidly growing in-house projects spanning not only international trade, real estate, and IT system development, but also medical product design, fashion, and e-commerce operation.",
+  "it-engineer_responsibilities": [
+    "Design, development, and testing of web applications and SaaS products",
+    "Project progress management and team leadership (for PL/PM candidates)",
+    "Specification adjustment and requirements definition with clients",
+    "Construction and operation of cloud infrastructure such as AWS, Azure, etc."
+  ],
+  "it-engineer_qualifications": [
+    "3+ years of web application development experience (language agnostic)",
+    "Experience with database design and operation (SQL/NoSQL)",
+    "Experience with team-based development and version control tools like Git"
+  ],
+  "it-engineer_benefits": [
+    "Full social insurance coverage",
+    "Full transportation allowance",
+    "Annual salary review, Bi-annual bonuses"
+  ]
+}

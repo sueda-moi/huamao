@@ -1,3 +1,5 @@
+// TopPage.tsx
+
 'use client';
 
 import HeroSection from '@/components/top/HeroSection';
@@ -6,9 +8,12 @@ import MvvSection from '@/components/top/MvvSection';
 import NewsSection from '@/components/top/NewsSection';
 import AboutUsSection from '@/components/top/AboutUsSection';
 import { useMessage } from '@/lib/useMessage';
+import { getAllCoreArticles } from '@/lib/data/articles'; 
+import { useLocaleStore } from '@/store/useLocaleStore';
 
 export default function TopPage() {
   const getMessage = useMessage();
+  const { locale } = useLocaleStore();
 
   const heroData = {
     title: getMessage('Pg100', 'hero_title') || '',
@@ -26,30 +31,28 @@ export default function TopPage() {
     mainPhrase: getMessage('Pg100', 'vision_main') || '',
     subtitle: getMessage('Pg100', 'vision_sub') || ''
   };
+  
+  const coreArticles = getAllCoreArticles();
+  const latestNews = coreArticles
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3); 
+
+  const newsItems = latestNews.map(article => {
+    const titleKey = `${article.id.toLowerCase()}_title`;
+    const categoryKey = `category_${article.category}`;
+
+    return {
+      date: new Date(article.date).toLocaleDateString(locale, { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '.'),
+      category: getMessage('articles', categoryKey) || '',
+      title: getMessage('articles', titleKey) || '',
+      href: `/news/${article.id}`
+    };
+  });
 
   const newsData = {
     sectionTitle: getMessage('Pg100', 'news_title') || '',
     buttonText: getMessage('Pg100', 'news_button') || '',
-    newsItems: [
-      {
-        date: '2024.01.19',
-        category: getMessage('articles', 'pg301_category') || '',
-        title: getMessage('articles', 'pg301_title') || '',
-        href: '/news/Pg301'
-      },
-      {
-        date: '2024.04.15',
-        category: getMessage('articles', 'pg302_category') || '',
-        title: getMessage('articles', 'pg302_title') || '',
-        href: '/news/Pg302'
-      },
-      {
-        date: '2025.06.20',
-        category: getMessage('articles', 'pg203_category') || '',
-        title: getMessage('articles', 'pg203_title') || '',
-        href: '/Pg203'
-      },
-    ]
+    newsItems: newsItems
   };
 
   const aboutData = {

@@ -21,5 +21,7 @@
   "footer_sitemap_articles": "Articles",
   "footer_address": "508-5 Waseda Tsurumaki-cho, Shinjuku-ku, Tokyo 162-0041, Japan",
   "footer_copyright": "Copyright © 2025 Kamo Inc. All Rights Reserved.",
-  "common_read_more": "Read More"
+  "common_read_more": "Read More",
+  "loading_title": "Loading...",
+  "loading_content": "<p>Loading content...</p>"
 }

@@ -21,5 +21,7 @@
   "footer_sitemap_articles": "文章列表",
   "footer_address": "邮编: 162-0041 日本东京都新宿区早稻田鹤卷町508番地5",
   "footer_copyright": "版权所有 © 2025 华茂株式会社",
-  "common_read_more": "了解更多"
+  "common_read_more": "了解更多",
+  "loading_title": "加载中...",
+  "loading_content": "<p>内容加载中...</p>"
 }

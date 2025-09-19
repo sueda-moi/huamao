@@ -1,0 +1,27 @@
+{
+  "it-engineer_title": "【社会招聘】IT工程师 (SE/PG/PL/PM方向)",
+  "it-engineer_tags": [
+    "全职",
+    "总公司 (东京都新宿区)"
+  ],
+  "it-engineer_summary_location": "东京都新宿区早稻田鹤卷町",
+  "it-engineer_summary_salary": "月薪 35万 ~ 70万日元 (依经验和能力)",
+  "it-engineer_summary_type": "正式员工",
+  "it-engineer_description": "我们正在招聘能在华茂株式会社的多元化业务中担当核心角色的IT工程师。您将广泛负责公司内部快速成长的各类项目，不仅包括国际贸易、房地产、IT系统开发，还涵盖医疗产品设计、时尚、电商网站运营等，覆盖从上游工程到维护运营的全部流程。",
+  "it-engineer_responsibilities": [
+    "Web应用及SaaS产品的设计、开发与测试",
+    "项目进度管理与团队领导 (PL/PM方向)",
+    "与客户沟通协调，进行需求定义与规格设计",
+    "构建与运维AWS、Azure等云基础设施"
+  ],
+  "it-engineer_qualifications": [
+    "3年及以上Web应用开发经验 (语言不限)",
+    "数据库（SQL/NoSQL）的设计与运维经验",
+    "具备团队开发经验，熟练使用Git等版本管理工具"
+  ],
+  "it-engineer_benefits": [
+    "完备的社会保险",
+    "交通费全额报销",
+    "每年一次调薪，每年两次奖金"
+  ]
+}
