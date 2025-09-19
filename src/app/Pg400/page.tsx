@@ -6,6 +6,7 @@ import HistorySection from '@/components/pg400/HistorySection';
 import AccessSection from '@/components/pg400/AccessSection';
 import { useMessage } from '@/lib/useMessage';
 import PageHero from '@/components/common/PageHero';
+import { siteConfig } from '@/config/siteConfig';
 
 export default function Page400() {
     const getMessage = useMessage();
@@ -60,8 +61,8 @@ export default function Page400() {
         address: getMessage('Pg400', 'access_address') || '',
         tel: getMessage('Pg400', 'access_tel') || '',
         mapButtonText: getMessage('Pg400', 'access_map_button') || '',
-        mapUrl: "https://maps.app.goo.gl/9uT5d2F2D1g8bXpS7",
-        mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.830232924195!2d139.7618623762887!3d35.68113842948283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfaa0556363%3A0x23c3de8215d65c69!2z5paw5Zu96Zqb44OT44Or!5e0!3m2!1sja!2sjp!4v1721615598506!5m2!1sja!2sjp"
+        mapUrl: siteConfig.maps.shareUrl,
+        mapEmbedUrl: siteConfig.maps.embedUrl,
     };
 
     return (
