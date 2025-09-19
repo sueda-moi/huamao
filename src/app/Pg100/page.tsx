@@ -39,7 +39,7 @@ export default function TopPage() {
 
   const newsItems = latestNews.map(article => {
     const titleKey = `${article.id.toLowerCase()}_title`;
-    const categoryKey = `category_${article.category}`;
+    const categoryKey = `category_${article.categoryKey}`;
 
     return {
       date: new Date(article.date).toLocaleDateString(locale, { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '.'),

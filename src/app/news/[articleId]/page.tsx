@@ -28,13 +28,13 @@ export default function ArticleDetailPage({ params }: Props) {
       // Construct dynamic keys for translation lookup
       const titleKey = `${coreArticle.id.toLowerCase()}_title`;
       const contentKey = `${coreArticle.id.toLowerCase()}_content`;
-      const categoryKey = `category_${coreArticle.category}`;
+      const categoryKey = `category_${coreArticle.categoryKey}`;
       
       const hydratedArticle: Article = {
         ...coreArticle,
         title: getMessage('articles', titleKey) || loadingTitle,
         content: getMessage('articles', contentKey) || loadingContent,
-        category: getMessage('articles', categoryKey) || '',
+        categoryLabel: getMessage('articles', categoryKey) || '',
         excerpt: '', // Not needed on the detail page
         date: new Date(coreArticle.date).toLocaleDateString(locale, {
             year: 'numeric',
@@ -56,7 +56,7 @@ export default function ArticleDetailPage({ params }: Props) {
             <header className={styles.header}>
             <div className={styles.meta}>
                 <span className={styles.date}>{article.date}</span>
-                <span className={styles.category}>{article.category}</span>
+                <span className={styles.category}>{article.categoryKey}</span>
             </div>
             <h1 className={styles.title}>{article.title}</h1>
             </header>

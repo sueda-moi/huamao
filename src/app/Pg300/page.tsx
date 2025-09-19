@@ -16,15 +16,20 @@ export default function Page300() {
   const articlesForList = coreArticles.map(article => {
     const titleKey = `${article.id.toLowerCase()}_title`;
     const excerptKey = `${article.id.toLowerCase()}_excerpt`;
-    const categoryKey = `category_${article.category}`;
+    // Use the correct property 'categoryKey' to build the translation key
+    const categoryTranslationKey = `category_${article.categoryKey}`;
 
     return {
-      ...article,
+      // --- Data for Logic ---
+      id: article.id,
+      categoryKey: article.categoryKey, // Pass the key for filtering
+      
+      // --- Data for Display ---
       href: `/news/${article.id}`,
+      image: article.image,
       title: getMessage('articles', titleKey) || '',
       excerpt: getMessage('articles', excerptKey) || '',
-      category: getMessage('articles', categoryKey) || '',
-      // Format the date based on the current locale.
+      categoryLabel: getMessage('articles', categoryTranslationKey) || '', // Populate the label
       date: new Date(article.date).toLocaleDateString(locale, {
         year: 'numeric',
         month: 'long',

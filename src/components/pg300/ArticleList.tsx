@@ -13,7 +13,8 @@ type Tab = {
 
 // Type for a single article
 type Article = {
-    category: 'news' | 'press_release' | 'business' | 'blog';
+    categoryKey: 'news' | 'press_release' | 'business' | 'blog'; // Use the key for logic
+    categoryLabel: string; // Use the label for display
     date?: string; // Blogs might not have a date shown in the list
     title: string;
     excerpt?: string; // Only for blogs
@@ -38,7 +39,7 @@ const ArticleList = ({ filterTabs, articles, searchPlaceholder }: ArticleListPro
     const filteredArticles = articles
         .filter(article => {
             if (activeTab === 'all') return true;
-            return article.category === activeTab;
+            return article.categoryKey === activeTab;
         })
         .filter(article => {
             if (searchQuery.trim() === '') return true;
@@ -82,16 +83,13 @@ const ArticleList = ({ filterTabs, articles, searchPlaceholder }: ArticleListPro
                 {/* Articles List */}
                 <div className={styles.listContainer}>
                     {filteredArticles.map((article, index) => {
-                        // To display the category label, find the corresponding label from the key
-                        const categoryLabel = filterTabs.find(tab => tab.key === article.category)?.label || article.category;
-
                         return (
                             <Link href={article.href} key={index} className={styles.articleLink}>
-                                {article.category === 'blog' ? (
+                                {article.categoryKey === 'blog' ? (
                                     <div className={styles.blogCard}>
                                         <div className={styles.blogContent}>
                                             {/* Use dynamic class names to apply different colors */}
-                                            <span className={`${styles.categoryTag} ${styles[article.category]}`}>{categoryLabel}</span>
+                                            <span className={`${styles.categoryTag} ${styles[article.categoryKey]}`}>{article.categoryLabel}</span>
                                             <h3 className={styles.blogTitle}>{article.title}</h3>
                                             <p className={styles.blogExcerpt}>{article.excerpt}</p>
                                         </div>
@@ -101,7 +99,7 @@ const ArticleList = ({ filterTabs, articles, searchPlaceholder }: ArticleListPro
                                     </div>
                                 ) : (
                                     <div className={styles.newsItem}>
-                                        <span className={`${styles.categoryTag} ${styles[article.category]}`}>{categoryLabel}</span>
+                                        <span className={`${styles.categoryTag} ${styles[article.categoryKey]}`}>{article.categoryLabel}</span>
                                         <p className={styles.date}>{article.date}</p>
                                         <h3 className={styles.newsTitle}>{article.title}</h3>
                                     </div>
